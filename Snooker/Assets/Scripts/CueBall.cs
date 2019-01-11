@@ -14,29 +14,30 @@ public class CueBall : MonoBehaviour {
         strength = 1000000;
         
     }
-   
 
     // Update is called once per frame
     void Update () {
-        
+        /*
         if (Input.GetMouseButtonDown(0))
         {
             CueBallrb.AddForce(CueParent.transform.forward * strength);
         }
-        
+        */
         
 
 
     }
     public void ResetCue()
     {
+        Debug.Log("Resetti");
         BallRB.velocity = Vector3.zero;
         BallRB.angularVelocity = Vector3.zero;
         transform.position = CueParent.transform.position;
-        gameObject.SetActive(true);
-        CueBallrb.velocity = Vector3.zero;
+        CueParent.SetActive(true);
+        
+        //CueBallrb.velocity = Vector3.zero;
     }
-    private void OnTriggerEnter(Collider other)
+    /*private void OnTriggerEnter(Collider other)
     {
         if (other.transform.tag == "CueBall")
         {
@@ -46,7 +47,7 @@ public class CueBall : MonoBehaviour {
         }
        
     }
-
+    */
     /*
     private void OnCollisionEnter(Collision collision)
     {
